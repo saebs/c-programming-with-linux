@@ -15,6 +15,5 @@ int main(void)
             longest = t;
     } 
     printf("%d\n", longest);
-
     return 0;
 }
