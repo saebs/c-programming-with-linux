@@ -23,7 +23,7 @@ int main(void)
 }
 
 double meters_to_feet(double meters) {
-    return meters * 3.28084;
+    return meters * .3048;
 }
 
 double grams_to_pounds(double grams) {
