@@ -17,5 +17,12 @@ int main(void)
     * addrOfa = *addrOfa + 1;
     printf("@ address %p there is now %.2lf\n", addrOfa, a);
 
+    int y, * x;
+
+    y = 1;
+    x = &y;
+    int * z = x;
+    printf("x: %p , y: %p and %p", x, &y, z);
+
     return 0;
 }

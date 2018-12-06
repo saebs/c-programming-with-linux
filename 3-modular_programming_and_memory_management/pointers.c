@@ -10,7 +10,7 @@ int main(void)
     double * addressOfd = &d;
     char * addressOfc = &c;
 
-    printf("addressOfi %p\n", addressOfi);
+    printf("addressOfi %p, pfee %lf\n", addressOfi, (double) *addressOfi);
     printf("addressOfd %p\n", addressOfd);
     printf("addressOfc %p\n", addressOfc);
     printf("size of last %lu\n", sizeof(addressOfc));
