@@ -13,10 +13,10 @@ void scale(struct point *);
 int main(void)
 {
     struct point focal;
-    get_plot(&focal);
-    gPlot(focal);
-    scale(&focal);
-    gPlot(focal);
+    get_plot(&focal); // passing by reference
+    gPlot(focal); // passing by value
+    scale(&focal); // by reference again!!
+    gPlot(focal); // njalonjalo
     return 0;
 }
 
