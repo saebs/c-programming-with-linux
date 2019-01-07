@@ -15,8 +15,10 @@ int main(void)
     // struct fplManager one = {"Sabelo", 89, 3};
     struct fplManager best;
     readManager(&best);
-
     fplProfile(&best);
+
+    printf("%zu\n", sizeof( struct fplManager) );
+    // printf("%lu\n", sizeof(int));
 }
 
 void fplProfile(struct fplManager * mgr)
