@@ -61,9 +61,7 @@ struct student * createStudent(char studentName[], int studentAge)
 {
     struct student * stuptr;
     int stupadding, agepadding;
-    // Remember this. Got errors byte alingment warara when in used size of array sizeof(studentName[50] in malloc braces)
-    // stuptr = (struct student *) malloc(sizeof(studentName[50]) + sizeof(studentAge));
-    stuptr = (struct student *) malloc(sizeof(char*) * 51 + sizeof(studentAge)); // Hack to solve bug
+    stuptr = (struct student *) malloc(sizeof(struct student));
     int i = 0;
     while (studentName[i] != '\0')
     {

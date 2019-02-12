@@ -24,7 +24,7 @@ int main(void)
 struct student * createStudent(char studentName[], int studentAge)
 {
     struct student * stuptr;
-    stuptr = (struct student *) malloc(sizeof(studentName[50]) + sizeof(studentAge));
+    stuptr = (struct student *) malloc(sizeof(struct student))
     int i = 0;
     while (studentName[i] != '\0')
     {
