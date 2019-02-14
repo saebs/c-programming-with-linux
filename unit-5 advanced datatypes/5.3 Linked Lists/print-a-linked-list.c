@@ -14,29 +14,20 @@ struct digit * createDigit(int);
 // create append function, takes end and  new struct, updates and return last or end node
 struct digit * append(struct digit * end, struct digit * newDigitr);
 void printDigits(struct digit * digits);
+void freeNumber(struct digit * start);
+struct digit * readNumber();
 
 int main(void)
 {
     int first = 7;
     int second = 14;
     int third = 21;
+
     struct digit * NewNodePtr, *start, *end, *tmp;
-    start = createDigit(first);
-    end = start;
-    NewNodePtr = createDigit(second);
-    end = append(end, NewNodePtr);
-    NewNodePtr = createDigit(third);
-    end = append(end, NewNodePtr);
-
+    // REad digits
+    start = readNumber();
     printDigits(start);
-
-    tmp = start->next;
-    free(start); // first node
-    start = tmp;
-    tmp = start->next;
-    free(start);
-    free(tmp); // last node
-    // printf("No printing ability yet :-( but it compiles!\n");
+    freeNumber(start); // first node
     return 0;
 }
 
@@ -66,4 +57,40 @@ void printDigits(struct digit * digits)
         ptr = ptr->next;
     }
     printf("\n");
+}
+
+void freeNumber(struct digit * start)
+{
+    struct digit * ptr = start;
+    struct digit * tmp;
+    while (ptr != NULL) {
+        tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
+    }
+
+}
+/// REad number
+struct digit * readNumber()
+{
+    char c;
+    int d;
+    struct digit *start, *end , *newptr;
+    start = NULL;
+    scanf("%c", &c);
+    while (c != '\n')
+    {
+        d = c - 48;
+        newptr = createDigit(d);
+        if (start == NULL)
+        {
+            start = newptr;
+            end = start;
+        } else {
+            end = append(end, newptr);
+        }
+        scanf("%c", &c);
+    }
+
+    return start;
 }
