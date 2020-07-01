@@ -64,7 +64,8 @@ void printPoly(struct point *ptr, int N) {
 // Write your initializePoly() function here
 void initializePoly(struct point * poly, int n)
 {
-   for (int i = 0; i < n; i++)
+	int i;
+   for (i = 0; i < n; i++)
    {
       poly[i].x = -i;
       poly[i].y = i * i;
